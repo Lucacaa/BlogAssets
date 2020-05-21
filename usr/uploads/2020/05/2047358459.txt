@@ -1,0 +1,5 @@
+﻿/**使用CDN后获取访客真实ip*/
+if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+  $list = explode(',',$_SERVER['HTTP_X_FORWARDED_FOR']);
+  $_SERVER['REMOTE_ADDR'] = $list[0];
+}
